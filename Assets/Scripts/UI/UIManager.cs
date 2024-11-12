@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,15 +5,24 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
+    [Header("Status Bar")]
+    //tool equip slot on the status bar
+    public Image toolEquipSlot;
 
     [Header("Inventory System")]
     // the inventory panel 
     public GameObject inventoryPanel;
+
+    //the tool equip Ui slot on the inventory panel
+    public HandInventorySlot toolHandSlot;
     //The tool slot UIs
     public InventorySlot[] toolSlots;
 
     //The item slot UIs
     public InventorySlot[] itemSlots;
+
+    //the tool equip Ui slot on the inventory panel
+    public HandInventorySlot itemHandSlot;
 
     //item info box
     public TMP_Text itemNameText;
@@ -38,6 +45,16 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         RenderInventory();
+        AssignSlotIndexes();
+    }
+
+    public void AssignSlotIndexes()
+    {
+        for (int i = 0; i < toolSlots.Length; i++)
+        {
+            toolSlots[i].AssignIndex(i);
+            itemSlots[i].AssignIndex(i);
+        }
     }
 
     //Render the inventory screen to reflect the Player's Inventory. 
@@ -54,6 +71,29 @@ public class UIManager : MonoBehaviour
 
         //Render the Item section
         RenderInventoryPanel(inventoryItemSlots, itemSlots);
+
+        //Render the equipped slots
+        toolHandSlot.Display(InventoryManager.Instance.equippedTool);
+        itemHandSlot.Display(InventoryManager.Instance.equippedItem);
+
+
+        //get tool equip from inventoryManager
+        ItemData equippedTool = InventoryManager.Instance.equippedTool;
+        // check if there is an item to display
+        if (equippedTool != null)
+        {
+
+            // switch the thumbnail over
+            toolEquipSlot.sprite = equippedTool.thumbnail;
+
+            toolEquipSlot.gameObject.SetActive(true);
+
+
+            return;
+        }
+
+        toolEquipSlot.gameObject.SetActive(false);
+
     }
 
     //Iterate through a slot in a section and display them in the UI
