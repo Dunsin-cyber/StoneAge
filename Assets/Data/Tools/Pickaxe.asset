@@ -15,4 +15,4 @@ MonoBehaviour:
   description: Breaks rocks for minerals.
   thumbnail: {fileID: -1413539639, guid: a277c92fa1f466f4ba234c001abe8d58, type: 3}
   gameModel: {fileID: 0}
-  toolType: 0
+  toolType: 3

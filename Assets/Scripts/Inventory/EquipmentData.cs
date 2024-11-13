@@ -2,7 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/Equipment")]
 
-public class Equipments : ItemData
+public class EquipmentData : ItemData
 {
     public enum ToolType
     {

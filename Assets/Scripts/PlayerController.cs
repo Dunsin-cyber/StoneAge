@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Animator animator;
     public Joystick joystick;
+    // public Buttton actionButton;
 
     [Header("Movement System")]
     private float moveSpeed = 4f;
@@ -34,6 +35,13 @@ public class PlayerController : MonoBehaviour
 
         //Runs the function that handles all interaction
         Interact();
+            //Debugging purposes only
+        //Skip the time when the right square bracket is pressed
+        if (Input.GetKey(KeyCode.RightBracket))
+        {
+            TimeManager.Instance.Tick();
+        }
+    
     }
 
     public void Interact()

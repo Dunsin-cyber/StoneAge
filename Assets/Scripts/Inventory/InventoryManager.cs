@@ -68,6 +68,40 @@ public class InventoryManager : MonoBehaviour
     // Handles movement of item from hand to inventory
     public void HandToInventory(InventorySlot.InventoryType inventoryType)
     {
+        if (inventoryType == InventorySlot.InventoryType.Item)
+        {
+            // iterate through each inventory slot and find an empty slot
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i] == null)
+                {
+                    //send equipment item over
+                    items[i] = equippedItem;
+                    //Remove the item from the hand
+                    equippedItem = null;
+                    break;
+                }
+            }
+
+        }
+        else
+        {
+            // iterate through each inventory slot and find an empty slot
+            for (int i = 0; i < tools.Length; i++)
+            {
+                if (tools[i] == null)
+                {
+                    //send equipment item over
+                    tools[i] = equippedTool;
+                    //Remove the item from the hand
+                    equippedTool = null;
+                    break;
+                }
+            }
+
+        }
+        //update changed in the inventory
+        UIManager.Instance.RenderInventory();
 
     }
 
