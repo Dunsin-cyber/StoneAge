@@ -8,4 +8,12 @@ public class SeedData : ItemData
 
 
     public ItemData cropToYield;
+
+    public GameObject seedling;
+
+    [Header("Regrowable")]
+    //is the plant able to regrow the crop after being harvested
+    public bool regrowable;
+    public int daysToRegrow;
+
 }

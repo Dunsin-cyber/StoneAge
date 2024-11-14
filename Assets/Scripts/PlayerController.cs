@@ -35,13 +35,13 @@ public class PlayerController : MonoBehaviour
 
         //Runs the function that handles all interaction
         Interact();
-            //Debugging purposes only
+        //Debugging purposes only
         //Skip the time when the right square bracket is pressed
         if (Input.GetKey(KeyCode.RightBracket))
         {
             TimeManager.Instance.Tick();
         }
-    
+
     }
 
     public void Interact()
@@ -53,7 +53,13 @@ public class PlayerController : MonoBehaviour
             playerInteraction.Interact();
         }
 
-        //TODO: Set up item interaction
+        //item interaction
+        if (Input.GetButtonDown("Fire2"))
+        {
+            //Interact
+            playerInteraction.ItemInteract();
+        }
+
     }
 
     public void Move()
