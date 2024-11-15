@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485ee5c5904c554baff5409c56c5e84, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  description: 
-  thumbnail: {fileID: 0}
-  gameModel: {fileID: 0}
+  description: fruits from omato seeds
+  thumbnail: {fileID: 421451466, guid: 3d167102b4f80b346bd8e225b9486de6, type: 3}
+  gameModel: {fileID: 470268146917281055, guid: e7dcd4d436a36b048a62b4f995807bca, type: 3}

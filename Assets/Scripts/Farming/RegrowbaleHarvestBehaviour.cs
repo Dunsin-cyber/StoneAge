@@ -20,6 +20,7 @@ public class RegrowbaleHarvestBehaviour : InteractableObject
 
 
         //set the parent crop back to seedling to regrow it
+        parentCrop.Regrow();
 
     }
 }
