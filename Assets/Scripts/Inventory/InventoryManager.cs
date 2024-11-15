@@ -274,6 +274,21 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+
+    public void ConsumeItem(ItemSlotData itemSlot)
+    {
+        if (itemSlot.IsEmpty())
+        {
+            Debug.Log("There is nothing to consume");
+            return;
+        }
+        //use up one of the item slots
+        itemSlot.Remove();
+        //refresh inventory
+        RenderHand();
+        UIManager.Instance.RenderInventory();
+    }
+
     #region  Inventory slot validation
     private void OnValidate()
     {

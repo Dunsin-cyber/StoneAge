@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour, ITimeTracker
     [Header("Status Bar")]
     //tool equip slot on the status bar
     public Image toolEquipSlot;
+    //Tool quantity slot in the status bar
+    public TMP_Text toolQuantityText;
     //Time UI
     public TMP_Text timeText;
     public TMP_Text dateText;
@@ -86,6 +88,10 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
         //get tool equip from inventoryManager
         ItemData equippedTool = InventoryManager.Instance.GetEquippedSlotItem(InventorySlot.InventoryType.Tool);
+
+
+        //text should be empty by default
+        toolQuantityText.SetText("");
         // check if there is an item to display
         if (equippedTool != null)
         {
@@ -94,6 +100,13 @@ public class UIManager : MonoBehaviour, ITimeTracker
             toolEquipSlot.sprite = equippedTool.thumbnail;
 
             toolEquipSlot.gameObject.SetActive(true);
+
+            //Get quantity 
+            int quantity = InventoryManager.Instance.GetEquippedSlot(InventorySlot.InventoryType.Tool).quantity;
+            if (quantity > 1)
+            {
+                toolQuantityText.SetText(quantity.ToString());
+            }
 
 
             return;
