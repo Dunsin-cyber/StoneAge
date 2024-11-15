@@ -67,11 +67,11 @@ public class UIManager : MonoBehaviour, ITimeTracker
     //Render the inventory screen to reflect the Player's Inventory. 
     public void RenderInventory()
     {
-        //Get the inventory tool slots from Inventory Manager
-        ItemData[] inventoryToolSlots = InventoryManager.Instance.tools;
+        //get the respective slots to process
+        ItemSlotData[] inventoryToolSlots = InventoryManager.Instance.GetInventorySlots(InventorySlot.InventoryType.Tool);
+        ItemSlotData[] inventoryItemSlots = InventoryManager.Instance.GetInventorySlots(InventorySlot.InventoryType.Item);
 
-        //Get the inventory item slots from Inventory Manager
-        ItemData[] inventoryItemSlots = InventoryManager.Instance.items;
+
 
         //Render the Tool section
         RenderInventoryPanel(inventoryToolSlots, toolSlots);
@@ -80,12 +80,12 @@ public class UIManager : MonoBehaviour, ITimeTracker
         RenderInventoryPanel(inventoryItemSlots, itemSlots);
 
         //Render the equipped slots
-        toolHandSlot.Display(InventoryManager.Instance.equippedTool);
-        itemHandSlot.Display(InventoryManager.Instance.equippedItem);
+        toolHandSlot.Display(InventoryManager.Instance.GetEquippedSlot(InventorySlot.InventoryType.Tool));
+        itemHandSlot.Display(InventoryManager.Instance.GetEquippedSlot(InventorySlot.InventoryType.Item));
 
 
         //get tool equip from inventoryManager
-        ItemData equippedTool = InventoryManager.Instance.equippedTool;
+        ItemData equippedTool = InventoryManager.Instance.GetEquippedSlotItem(InventorySlot.InventoryType.Tool);
         // check if there is an item to display
         if (equippedTool != null)
         {
@@ -104,7 +104,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     }
 
     //Iterate through a slot in a section and display them in the UI
-    void RenderInventoryPanel(ItemData[] slots, InventorySlot[] uiSlots)
+    void RenderInventoryPanel(ItemSlotData[] slots, InventorySlot[] uiSlots)
     {
         for (int i = 0; i < uiSlots.Length; i++)
         {

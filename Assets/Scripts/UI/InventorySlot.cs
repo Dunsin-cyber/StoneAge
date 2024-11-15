@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     ItemData itemToDisplay;
+    int quantity;
 
     public Image itemDisplayImage;
+    public TMP_Text quantityText;
 
 
     public enum InventoryType
@@ -17,8 +21,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public InventoryType inventoryType;
 
     int slotIndex;
-    public void Display(ItemData itemToDisplay)
+    public void Display(ItemSlotData itemSlot)
     {
+        //set the variables accordingly
+        itemToDisplay = itemSlot.itemData;
+        quantity = itemSlot.quantity;
+
+        //y default, qunatity text will not show anything
+        quantityText.SetText("");
 
         // check if there is an item to display
         if (itemToDisplay != null)
@@ -26,7 +36,12 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
             // switch the thumbnail over
             itemDisplayImage.sprite = itemToDisplay.thumbnail;
-            this.itemToDisplay = itemToDisplay;
+
+            //display the stack qunatity if it is more than 1
+            if (quantity > 1)
+            {
+                quantityText.SetText(quantity.ToString());
+            }
 
             itemDisplayImage.gameObject.SetActive(true);
 
