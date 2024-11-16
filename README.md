@@ -114,5 +114,5 @@ Push to the branch (git push origin feature-branch).
 Open a Pull Request.
 Please read our Contributing Guidelines for more details.
 
-📄 License
+## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
