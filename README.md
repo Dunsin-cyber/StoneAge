@@ -11,7 +11,7 @@ Welcome to **Stone Age Farm**, a unique play-to-earn farming game set in a primi
 - **Blockchain Integration**: TON, AEON Payment Protocol
 - **Real-time Communication**: Socket.IO
 - **Payment Integration**: TON, AEON
-- **Deployment**: Alibaba Cloud, DigitalOcean
+- **Deployment**
 
 ## 📖 Table of Contents
 
