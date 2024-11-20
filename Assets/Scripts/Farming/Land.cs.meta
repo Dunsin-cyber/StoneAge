@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9303dbaf99829034ea29cfc0b187ad0f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - soilMat: {fileID: 2100000, guid: 8f1d43c667ec5324399f65db66f4bd32, type: 2}
+  - farmlandMat: {fileID: 2100000, guid: 4678a3551ac495249acec7f3f512ba4c, type: 2}
+  - wateredMat: {fileID: 2100000, guid: cc4417c184a4e7e48b7bb3bc8bc9d3b8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
