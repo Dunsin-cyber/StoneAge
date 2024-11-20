@@ -2,7 +2,7 @@
 
 Welcome to **Stone Age Farm**, a unique play-to-earn farming game set in a primitive world where players start with a piece of land and some carved stones. As the game evolves, players can purchase equipment from the future, buy additional lands, and monopolize their farming empire. The game integrates **TON** and **AEON Payment Protocol** for in-game purchases, land sales, and NFT minting to verify ownership of lands and inventions.
 
-![Stone Age Farm Banner]()
+![Mini App Repo](https://github.com/Dunsin-cyber/stone-age-farm)
 
 ## 🛠️ Tech Stack
 
