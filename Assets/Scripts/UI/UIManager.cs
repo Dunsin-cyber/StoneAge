@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour, ITimeTracker
     // the inventory panel 
     public GameObject inventoryPanel;
 
-
     //the tool equip Ui slot on the inventory panel
     public HandInventorySlot toolHandSlot;
     //The tool slot UIs
