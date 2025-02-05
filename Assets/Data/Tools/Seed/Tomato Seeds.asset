@@ -19,8 +19,4 @@ MonoBehaviour:
   cropToYield: {fileID: 11400000, guid: bf05519e85360ea46af9c38feeeb131e, type: 2}
   seedling: {fileID: 7965040684545614518, guid: a719c8868d3325c41bba49d70832fdf2, type: 3}
   regrowable: 1
-<<<<<<< HEAD
   daysToRegrow: 1
-=======
-  daysToRegrow: 2
->>>>>>> origin/main

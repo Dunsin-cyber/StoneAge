@@ -4,16 +4,14 @@ using UnityEngine.UI;  // To access UI components like Button
 public class ButtonHoldController : MonoBehaviour
 {
     private bool isButtonHeld = false;
-    public Button yourButton;  // Reference to the button
-
     void Start()
     {
         // Ensure the button is not null and hook up the events
-        if (yourButton != null)
-        {
-            // Button press starts the continuous function
-            yourButton.onClick.AddListener(OnButtonPress);
-        }
+        // if (yourButton != null)
+        // {
+        //     // Button press starts the continuous function
+        //     yourButton.onClick.AddListener(ButtonPress);
+        // }
     }
 
     void Update()
@@ -26,14 +24,17 @@ public class ButtonHoldController : MonoBehaviour
     }
 
     // This is called when the button is pressed
-    public void OnButtonPress()
+    public void ButtonPress()
     {
+
         isButtonHeld = true;  // Start holding the button
+        UIManager.Instance.RemoveFromCoins();
     }
 
     // You can also detect when the button is released
-    public void OnButtonRelease()
+    public void ButtonRelease()
     {
         isButtonHeld = false;  // Stop holding the button
     }
+
 }

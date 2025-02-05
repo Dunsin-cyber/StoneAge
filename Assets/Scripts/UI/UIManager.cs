@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public TMP_Text dateText;
 
     [Header("Token")]
-    private int coin = 2050;
+    private int coin = 1000;
     public TMP_Text coinText;
 
     [Header("Purchase System")]
@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour, ITimeTracker
     [Header("Inventory System")]
     // the inventory panel 
     public GameObject inventoryPanel;
+
+    public GameObject loginPanel;
+
 
     //the tool equip Ui slot on the inventory panel
     public HandInventorySlot toolHandSlot;
@@ -151,6 +154,13 @@ public class UIManager : MonoBehaviour, ITimeTracker
 
     }
 
+    public void ToggleLoginPanel()
+    {
+        //if the panel is hidden, show it and vice versa
+        loginPanel.SetActive(!loginPanel.activeSelf);
+        // PurchaseManager.Instance.RenderPurchaseManager();
+
+    }
 
 
     public void DisplayItemInfo(ItemData data)
@@ -213,6 +223,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     public void RemoveFromCoins()
     {
         coin -= 50;
+        coinText.SetText(coin.ToString());
     }
 
     public void RemoveFromCoinsForLand()

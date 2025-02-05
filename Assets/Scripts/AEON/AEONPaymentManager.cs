@@ -15,11 +15,11 @@ public class AeonPaymentManager : MonoBehaviour
 
     [Header("AEON Payment Settings")]
     public string aeonApiUrl = "https://sbx-crypto-payment-api.aeon.xyz/open/api/tg/payment/V2"; // Update with the correct URL
-    public string appId = "xx";
-    public string secretKey = "xx"; // Replace with your actual secret key
+    public string appId = "";
+    public string secretKey = ""; // Replace with your actual secret key
     // public string callbackURL = "https://yourcallback.url/v1/xxxxx";
     public string redirectURL = "https://stone-age-farm.vercel.app/resolution";
-    public string userId = "ayodejiabisuwa23@gmail.com"; // User email or ID
+    public string userId = ""; // User email or ID
     public string paymentExchange = "34aeb688-decb-485f-9d80-b66466783394,7f4307ea-58c6-4678-9eb2-fec205de5401";
     public TMP_Text paymentStatusText; // Optional UI text to display status
 
@@ -186,6 +186,7 @@ public class AeonPaymentManager : MonoBehaviour
     {
         StartCoroutine(MakePayment("1"));
     }
+    
 
     // void OpenWebView(string url)
     // {
